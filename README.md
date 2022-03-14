@@ -1,3 +1,11 @@
+# Meme Generator
+
+This is a meme generator that uses the [Imgflip](https://imgflip.com/api) API to generate random memes from a current list of world's top 100 memes.
+
+Live preview: [meme generator](https://heyyayesh.github.io/meme-generator)
+
+# ----- Ignore following info if you don't wish to contribute to the project -----
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
