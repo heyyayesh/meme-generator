@@ -1,13 +1,127 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  overflow-x: hidden;
+}
+
+header {
+  font-family: 'Open sans', sans-serif;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #672280, #A626D3);
+  color: white;
+  padding: 5px;
+  gap: 20px;
+  justify-content: center;
+  user-select: none;
+  width: 100vw;
+  font-size: 1.25rem;
+}
+
+header > img {
+  width: 70px;
+  height: 80px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+}
+
+.main input {
+  width: 300px;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: 1px solid #D5D4D8;
+  background: white;
+  border-radius: 5px;
+  outline: none;
+}
+
+.main button {
+  background: linear-gradient(90deg, #672280, #A626D3);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 100ms ease-in-out;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+.controls {
+  display: grid;
+  grid-template: auto auto / 300px 300px; 
+  gap: 20px;
+}
+
+#meme-btn {
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.meme {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meme-img {
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.top-text, .bottom-text {
+  position: absolute;
+  /* width: 50%; */
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin: 15px 0;
+  padding: 0 5px;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: Impact, sans-serif;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000,
+    2px 2px 5px #000;
+}
+
+.top-text {
+  top: 0;
+}
+
+.bottom-text {
+  bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .controls {
+    grid-template: auto auto auto / auto;
+  }
 }
