@@ -1,4 +1,5 @@
 import React from "react";
+import Download from "./Download";
 
 export default function Meme() {
   const [allMemes, setAllMemes] = React.useState([]);
@@ -8,6 +9,7 @@ export default function Meme() {
       const apiData = await fetch('https://api.imgflip.com/get_memes');
       const jsonData = await apiData.json();
       setAllMemes(jsonData.data.memes);
+      console.log(jsonData.data.memes);
     }
 
     inner();
@@ -17,7 +19,8 @@ export default function Meme() {
     topText: '',
     bottomText: '',
     url: 'https://i.imgflip.com/23ls.jpg',
-    width: 500
+    width: 500,
+    id: '97984'
   });
 
   function handleChange(e) {
@@ -35,11 +38,13 @@ export default function Meme() {
     const rand = Math.floor(Math.random() * allMemes.length);
     const imgUrl = allMemes[rand].url;
     const wid = allMemes[rand].width;
+    const id = allMemes[rand].id;
 
     setMeme((prevMeme) => ({
       ...prevMeme,
       url: imgUrl,
-      width: wid
+      width: wid,
+      id: id
     }))
   }
 
@@ -95,6 +100,8 @@ export default function Meme() {
             {meme.bottomText}
           </h2>        
         </div>
+
+        <Download url={meme.url} name={meme.id} />
       
     </div>
   )

@@ -19,7 +19,6 @@ header {
   justify-content: center;
   user-select: none;
   width: 100vw;
-  font-size: 1.25rem;
 }
 
 header > img {
@@ -89,7 +88,6 @@ button:active {
 
 .top-text, .bottom-text {
   position: absolute;
-  /* width: 50%; */
   color: white;
   left: 50%;
   transform: translateX(-50%);
@@ -118,6 +116,10 @@ button:active {
 
 .bottom-text {
   bottom: 0;
+}
+
+.download-btn {
+  margin-top: 30px;
 }
 
 @media screen and (max-width: 600px) {
